@@ -1,9 +1,7 @@
-// Enable drag-and-drop
-new Sortable(document.getElementById('teamList'), {
-    animation: 150
-});
-
 document.getElementById('submitBtn').addEventListener('click', () => {
+
+    console.log("Button clicked");   // ← ADD IT RIGHT HERE
+
     const canvas = document.getElementById('outputCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -37,7 +35,6 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     watermark.onload = () => {
         ctx.drawImage(watermark, 780, 1600, 250, 250);
 
-        // Enable download
         const link = document.getElementById('downloadLink');
         link.href = canvas.toDataURL("image/png");
         link.download = "Flames_Prediction.png";
