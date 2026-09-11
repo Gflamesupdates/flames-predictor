@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at center,
+              #3a3a3a 0%,
+              #1f1f1f 40%,
+              #0f0f0f 100%);
+  color: white;
+}
+
+.header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 42px;
+  color: #d4af37;
+  text-shadow: 0 0 12px rgba(212,175,55,0.6);
+}
+
+.header p {
+  font-size: 18px;
+  color: #e0e0e0;
+}
+
+.predictor-box {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.25);
+  backdrop-filter: blur(6px);
+}
+
+.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.team-list li {
+  background: #800000;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: grab;
+  font-size: 18px;
+  border: 2px solid #d4af37;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.team-list li:hover {
+  background: #a00000;
+  transform: scale(1.02);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #d4af37;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: 'Anton', sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: #e6c45c;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffd;
+}
