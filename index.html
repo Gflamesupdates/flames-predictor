@@ -1,0 +1,47 @@
+<!-- rebuild -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guildford Flames Predictor – Arena Glow v2 Lite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>2026/27 Season Predictor</h1>
+        <p class="subtitle">Drag the teams into your chosen order</p>
+    </div>
+
+    <div class="predictor-container">
+        <ul id="teamList" class="team-list">
+            <li class="team">Belfast Giants</li>
+            <li class="team">Cardiff Devils</li>
+            <li class="team">Coventry Blaze</li>
+            <li class="team">Dundee Stars</li>
+            <li class="team">Fife Flyers</li>
+            <li class="team">Glasgow Clan</li>
+            <li class="team">Guildford Flames</li>
+            <li class="team">Manchester Storm</li>
+            <li class="team">Nottingham Panthers</li>
+            <li class="team">Sheffield Steelers</li>
+        </ul>
+
+        <button id="submitBtn" class="submit-btn">Generate Prediction Graphic</button>
+        <a id="downloadLink" class="download-btn" style="display:none;">Download PNG</a>
+    </div>
+
+    <footer>
+        <p>#GuildfordFlamesUpdates</p>
+    </footer>
+
+    <canvas id="outputCanvas" width="1080" height="1920" style="display:none;"></canvas>
+
+   <script src="Sortable.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
