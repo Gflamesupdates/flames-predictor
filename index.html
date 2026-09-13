@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flames Predictor</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- SortableJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="title">Flames Predictor</h1>
+
+    <!-- Draggable Team List -->
+    <ul id="teamList" class="team-list">
+        <li>Cardiff Devils</li>
+        <li>Belfast Giants</li>
+        <li>Dundee Stars</li>
+        <li>Coventry Blaze</li>
+        <li>Glasgow Clan</li>
+        <li<Fife Flyers</li>
+        <li>Guildford Flames</li>
+        <li>Manchester Storm</li>
+        <li>Nottingham Panthers</li>
+        <li>Sheffield Steelers</li>
+    </ul>
+
+    <!-- Winner Dropdowns -->
+    <div class="dropdowns">
+        <label>Challenge Cup Winner:</label>
+        <select id="cupWinner">
+            <option>Cardiff Devils</option>
+            <option>Belfast Giants</option>
+            <option>Dundee Stars</option>
+            <option>Coventry Blaze</option>
+            <option>Glasgow Clan</option>
+            <option>Fife Flyers</option>
+            <option>Guildford Flames</option>
+            <option>Manchester Storm</option>
+            <option>Nottingham Panthers</option>
+            <option>Sheffield Steelers</option>
+        </select>
+
+        <label>Playoff Winner:</label>
+        <select id="playoffWinner">
+            <option>Cardiff Devils</option>
+            <option>Belfast Giants</option>
+            <option>Dundee Stars</option>
+            <option>Coventry Blaze</option>
+            <option>Glasgow Clan</option>
+            <option>Fife Flyers</option>
+            <option>Guildford Flames</option>
+            <option>Manchester Storm</option>
+            <option>Nottingham Panthers</option>
+            <option>Sheffield Steelers</option>
+        </select>
+    </div>
+
+    <!-- Generate Button -->
+    <button id="generateBtn" class="generate-btn">Generate Prediction</button>
+
+    <!-- Canvas Output -->
+    <canvas id="predictorCanvas" width="900" height="900"></canvas>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
