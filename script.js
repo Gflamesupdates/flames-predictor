@@ -1,11 +1,9 @@
 // Enable drag and drop
-
 new Sortable(document.getElementById('teamList'), {
     animation: 150
 });
 
 // Generate graphic
-
 document.getElementById('submitBtn').addEventListener('click', () => {
 
     const canvas = document.getElementById('outputCanvas');
@@ -29,13 +27,14 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     ctx.fillStyle = 'gold';
     ctx.font = '70px Arial Black';
     ctx.textAlign = 'center';
+
     ctx.fillText(
         '2026/27 Season Predictor',
         canvas.width / 2,
         120
     );
 
-    // League table
+    // League Table
     ctx.fillStyle = 'white';
     ctx.font = '40px Arial';
 
@@ -53,15 +52,13 @@ document.getElementById('submitBtn').addEventListener('click', () => {
         y += 70;
     });
 
-    // Cup winner
-    const cupWinner =
-        document.getElementById('cupWinner').value;
+    // Cup Winner
+    const cupWinner = document.getElementById('cupWinner').value;
 
-    // Playoff winner
-    const playoffWinner =
-        document.getElementById('playoffWinner').value;
+    // Playoff Winner
+    const playoffWinner = document.getElementById('playoffWinner').value;
 
-    y += 40;
+    y += 50;
 
     ctx.fillStyle = 'gold';
     ctx.font = '50px Arial Black';
@@ -80,25 +77,10 @@ document.getElementById('submitBtn').addEventListener('click', () => {
         y
     );
 
-    // Download link
+    // Download button
+    const downloadLink = document.getElementById('downloadLink');
 
-    const downloadLink =
-        document.getElementById('downloadLink');
-
-    downloadLink.href =
-        canvas.toDataURL('image/png');
-
-    downloadLink.download =
-        'Flames_Prediction.png';
-
+    downloadLink.href = canvas.toDataURL('image/png');
+    downloadLink.download = 'Flames_Prediction.png';
     downloadLink.style.display = 'block';
-});
-
-prediction.forEach((line, index) => {
-    ctx.fillText(
-        `${index + 1}. ${line.replace(/^\d+\.\s*/, '')}`,
-        100,
-        y
-    );
-    y += 50;
 });
