@@ -93,3 +93,12 @@ document.getElementById('submitBtn').addEventListener('click', () => {
 
     downloadLink.style.display = 'block';
 });
+
+prediction.forEach((line, index) => {
+    ctx.fillText(
+        `${index + 1}. ${line.replace(/^\d+\.\s*/, '')}`,
+        100,
+        y
+    );
+    y += 50;
+});
