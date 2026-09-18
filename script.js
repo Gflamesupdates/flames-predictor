@@ -1,104 +1,97 @@
-// Enable drag and drop
+const teams = document.querySelectorAll('#teamList .team');
 
-new Sortable(document.getElementById('teamList'), {
-    animation: 150
-});
+const cupWinner =
+    document.getElementById('cupWinner').value;
 
-// Generate Prediction Graphic
+const playoffWinner =
+    document.getElementById('playoffWinner').value;
 
-document.getElementById('submitBtn').addEventListener('click', () => {
+let y = 260;
 
-    const canvas = document.getElementById('outputCanvas');
-    const ctx = canvas.getContext('2d');
+teams.forEach((team, index) => {
 
-    canvas.style.display = "block";
+    const teamName = team.textContent;
 
-    // Background
-    const gradient = ctx.createRadialGradient(
-        540, 960, 200,
-        540, 960, 1400
+    // Number colour
+
+    if (index === 0) {
+        ctx.fillStyle = "#FFD700";
+    }
+    else if (index >= 8) {
+        ctx.fillStyle = "#FF3030";
+    }
+    else {
+        ctx.fillStyle = "#C0C0C0";
+    }
+
+    ctx.font = "bold 50px Arial";
+    ctx.textAlign = "left";
+
+    ctx.fillText(
+        `${index + 1}`,
+        80,
+        y
     );
 
-    gradient.addColorStop(0, "#1a1a1a");
-    gradient.addColorStop(1, "#000000");
+    // Team Name
 
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#FFFFFF";
 
-    // Title
-    ctx.fillStyle = "gold";
-    ctx.font = "70px Arial Black";
-    ctx.textAlign = "center";
-    ctx.fillText("2026/27 Season Predictor", 540, 140);
+    ctx.fillText(
+        teamName,
+        180,
+        y
+    );
 
-    // Team List
-    const teams = document.querySelectorAll('#teamList .team');
+    let badgeX = 900;
 
-    let y = 260;
+    // CC badge
 
-    ctx.fillStyle = "white";
-    ctx.font = "50px Arial";
+    if (teamName === cupWinner) {
 
-    teams.forEach((team, index) => {
-        ctx.fillText(
-            `${index + 1}. ${team.textContent}`,
-            540,
-            y
+        ctx.fillStyle = "#FFD700";
+
+        ctx.fillRect(
+            badgeX,
+            y - 45,
+            70,
+            45
         );
 
-        y += 80;
-    });
+        ctx.fillStyle = "#000000";
+        ctx.font = "bold 28px Arial";
 
-    // Cup Winner
-    const cupWinner =
-        document.getElementById('cupWinner').value;
+        ctx.fillText(
+            "CC",
+            badgeX + 15,
+            y - 10
+        );
 
-    ctx.fillStyle = "gold";
-    ctx.font = "40px Arial Black";
+        badgeX -= 85;
+    }
 
-    ctx.fillText(
-        `Challenge Cup Winner`,
-        540,
-        1250
-    );
+    // PO badge
 
-    ctx.fillStyle = "white";
+    if (teamName === playoffWinner) {
 
-    ctx.fillText(
-        cupWinner,
-        540,
-        1310
-    );
+        ctx.fillStyle = "#7A0019";
 
-    // Playoff Winner
-    const playoffWinner =
-        document.getElementById('playoffWinner').value;
+        ctx.fillRect(
+            badgeX,
+            y - 45,
+            70,
+            45
+        );
 
-    ctx.fillStyle = "gold";
+        ctx.fillStyle = "#FFD700";
+        ctx.font = "bold 28px Arial";
 
-    ctx.fillText(
-        `Playoff Winner`,
-        540,
-        1420
-    );
+        ctx.fillText(
+            "PO",
+            badgeX + 15,
+            y - 10
+        );
+    }
 
-    ctx.fillStyle = "white";
-
-    ctx.fillText(
-        playoffWinner,
-        540,
-        1480
-    );
-
-    // Download Link
-    const link =
-        document.getElementById('downloadLink');
-
-    link.href =
-        canvas.toDataURL("image/png");
-
-    link.download =
-        "Flames_Prediction.png";
-
-    link.style.display = "block";
+    y += 80;
 });
