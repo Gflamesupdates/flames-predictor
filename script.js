@@ -1,5 +1,3 @@
-alert("script loaded");
-
 // Enable drag and drop
 
 new Sortable(document.getElementById('teamList'), {
