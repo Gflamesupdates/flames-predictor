@@ -13,8 +13,9 @@
         <h1>2026/27 Season Predictor</h1>
         <p class="subtitle">Drag the teams into your chosen order</p>
     </div>
-
-    <div class="predictor-container">
+<div class="predictor-container">
+<ul id="teamList" class="team-list">
+    
             <li class="team">Belfast Giants</li>
             <li class="team">Cardiff Devils</li>
             <li class="team">Coventry Blaze</li>
@@ -26,7 +27,7 @@
             <li class="team">Nottingham Panthers</li>
             <li class="team">Sheffield Steelers</li>
         </ul>
-<ul id="teamList" *lass="team-list">
+
 <div class="winner-selectors">
 
     <label for="cupWinner">Challenge Cup Winner</label>
@@ -72,7 +73,11 @@
         <p>#GuildfordFlamesUpdates</p>
     </footer>
 
-    <canvas id="outputCanvas" width="1080" height="1920" style="display:none;"></canvas>
+    <canvas id="outputCanvas" 
+width="1080" 
+height="1920" 
+style="display:none;">
+</canvas>
 
    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 
