@@ -49,56 +49,28 @@ document.getElementById('submitBtn').addEventListener('click', () => {
         y += 80;
     });
 
-    // Cup Winner
-    const cupWinner =
-        document.getElementById('cupWinner').value;
+   // Cup Winner
+ctx.fillText(
+    `Challenge Cup Winner`,
+    540,
+    1250
+);
 
-    ctx.fillStyle = "gold";
-    ctx.font = "40px Arial Black";
+ctx.fillText(
+    cupWinner,
+    540,
+    1310
+);
 
-    ctx.fillText(
-        `Challenge Cup Winner`,
-        540,
-        1250
-    );
+// Playoff Winner
+ctx.fillText(
+    `Playoff Winner`,
+    540,
+    1420
+);
 
-    ctx.fillStyle = "white";
-
-    ctx.fillText(
-        cupWinner,
-        540,
-        1310
-    );
-
-    // Playoff Winner
-    const playoffWinner =
-        document.getElementById('playoffWinner').value;
-
-    ctx.fillStyle = "gold";
-
-    ctx.fillText(
-        `Playoff Winner`,
-        540,
-        1420
-    );
-
-    ctx.fillStyle = "white";
-
-    ctx.fillText(
-        playoffWinner,
-        540,
-        1480
-    );
-
-    // Download Link
-    const link =
-        document.getElementById('downloadLink');
-
-    link.href =
-        canvas.toDataURL("image/png");
-
-    link.download =
-        "Flames_Prediction.png";
-
-    link.style.display = "block";
-});
+ctx.fillText(
+    playoffWinner,
+    540,
+    1480
+);
