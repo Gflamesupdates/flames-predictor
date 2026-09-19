@@ -47,7 +47,28 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     let y = 260;
 
     teams.forEach((team, index) => {
+// Team row background
 
+ctx.fillStyle = "#65001C";
+
+ctx.fillRect(
+    140,
+    y - 50,
+    820,
+    65
+);
+
+// Gold border
+
+ctx.strokeStyle = "#FFD700";
+ctx.lineWidth = 2;
+
+ctx.strokeRect(
+    140,
+    y - 50,
+    820,
+    65
+);
         const teamName = team.textContent;
 
         // Position colour
@@ -60,11 +81,29 @@ document.getElementById('submitBtn').addEventListener('click', () => {
         }
         else {
             ctx.fillStyle = "#C0C0C0";
+ctx.strokeStyle = "#FFD700";
+ctx.lineWidth = 2;
+
+ctx.strokeRect(
+    140,
+    y - 50,
+    820,
+    65
+);
         }
 
         ctx.font = "bold 48px Arial";
         ctx.textAlign = "left";
+// Row background
 
+ctx.fillStyle = "#65001C";
+
+ctx.fillRect(
+    140,
+    y - 50,
+    820,
+    65
+);
         // Position Number
         ctx.fillText(
             `${index + 1}`,
