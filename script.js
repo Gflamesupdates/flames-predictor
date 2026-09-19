@@ -39,26 +39,14 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     const teams = document.querySelectorAll('#teamList .team');
 
     const cupWinner =
-    document.getElementById('cupWinner').value;
+        document.getElementById('cupWinner').value;
 
-const playoffWinner =
-    document.getElementById('playoffWinner').value;
+    const playoffWinner =
+        document.getElementById('playoffWinner').value;
 
-/* TABLE FRAME */
+    let y = 260;
 
-ctx.strokeStyle = "#FFD700";
-ctx.lineWidth = 6;
-
-ctx.strokeRect(
-    40,    // left
-    180,   // top
-    1000,  // width
-    900    // height
-);
-
-let y = 260;
-
-teams.forEach((team, index) => {
+    teams.forEach((team, index) => {
 // Team row background
 
 ctx.fillStyle = "#65001C";
@@ -85,19 +73,23 @@ ctx.strokeRect(
 
         // Position colour
 
-       if (index === 0) {
-    ctx.fillStyle = "#D4AF37";
-}
-else if (index >= 8) {
-    ctx.fillStyle = "#7A0019";
-}
-else {
-    ctx.fillStyle = "#4A4A4A";
-}
-
-   ctx.fillStyle = "#C0C0C0";
+        if (index === 0) {
+            ctx.fillStyle = "#FFD700";
+        }
+        else if (index >= 8) {
+            ctx.fillStyle = "#FF3030";
+        }
+        else {
+            ctx.fillStyle = "#C0C0C0";
 ctx.strokeStyle = "#FFD700";
 ctx.lineWidth = 2;
+
+ctx.strokeRect(
+    140,
+    y - 50,
+    820,
+    65
+);
         }
 
         ctx.font = "bold 48px Arial";
